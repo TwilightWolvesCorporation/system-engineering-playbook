@@ -2,6 +2,13 @@
   max-width: 90% !important;
 }
 
+table {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  width: 100% !important;
+  display: table !important;
+}
+
 .drawio-viewer {
   width: 100%;
   height: 500px;
