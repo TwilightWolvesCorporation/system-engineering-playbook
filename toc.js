@@ -8,7 +8,7 @@ class MDBookSidebarScrollbox extends HTMLElement {
         super();
     }
     connectedCallback() {
-        this.innerHTML = '<ol class="chapter"><li class="chapter-item expanded "><a href="md.html"><strong aria-hidden="true">1.</strong> Конфигурация проекта</a></li><li class="chapter-item expanded "><a href="drawio.html"><strong aria-hidden="true">2.</strong> Пример использования Drawio</a></li><li class="chapter-item expanded "><a href="swagger.html"><strong aria-hidden="true">3.</strong> Пример использования Swagger</a></li></ol>';
+        this.innerHTML = '<ol class="chapter"><li class="chapter-item expanded "><a href="Context.html"><strong aria-hidden="true">1.</strong> Контекстная диаграмма</a></li><li class="chapter-item expanded "><a href="CONOPS.html"><strong aria-hidden="true">2.</strong> CONOPS</a></li><li class="chapter-item expanded "><a href="Requirements.html"><strong aria-hidden="true">3.</strong> Требования</a></li><li class="chapter-item expanded "><a href="Architecture.html"><strong aria-hidden="true">4.</strong> Архитектура</a></li><li class="chapter-item expanded "><a href="Interfaces.html"><strong aria-hidden="true">5.</strong> Интерфейсы</a></li><li class="chapter-item expanded "><a href="Risks.html"><strong aria-hidden="true">6.</strong> Риски</a></li><li class="chapter-item expanded "><a href="ValVer.html"><strong aria-hidden="true">7.</strong> Validation &amp; Verification</a></li></ol>';
         // Set the current, active page, and reveal it if it's hidden
         let current_page = document.location.href.toString().split("#")[0].split("?")[0];
         if (current_page.endsWith("/")) {

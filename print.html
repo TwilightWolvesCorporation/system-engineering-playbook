@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light sidebar-visible" dir="ltr">
+<html lang="ru" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>system-engineering-playbook</title>
+        <title>Dockies</title>
         <meta name="robots" content="noindex">
 
 
@@ -140,7 +140,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">system-engineering-playbook</h1>
+                    <h1 class="menu-title">Dockies</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -177,55 +177,173 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="md-example"><a class="header" href="#md-example">MD Example</a></h1>
-<h3 id="Структура-проекта"><a class="header" href="#Структура-проекта">Структура проекта</a></h3>
+                        <h1 id="Контекстная-диаграмма"><a class="header" href="#Контекстная-диаграмма">Контекстная диаграмма</a></h1>
+<h2 id="11-Описание-системы-и-её-границы"><a class="header" href="#11-Описание-системы-и-её-границы">1.1. Описание системы и её границы</a></h2>
+<p><strong>Dockies (Documents and Cookies)</strong> — корпоративная платформа электронного документооборота и согласования, обеспечивающая:</p>
 <ul>
-<li><code>src/</code> - основная директория с контентом
+<li>создание и версионирование документов (заявки, договоры, служебные записки);</li>
+<li>настраиваемые маршруты согласования с контролем сроков;</li>
+<li>юридически значимый аудит и неотказуемость действий;</li>
+<li>интеграцию с корпоративной инфраструктурой (AD, справочники, уведомления, хранилище).</li>
+</ul>
+<h3 id="Что-входит-в-границы-системы"><a class="header" href="#Что-входит-в-границы-системы">Что входит в границы системы</a></h3>
 <ul>
-<li><code>SUMMARY.md</code> - файл навигации/оглавления</li>
-<li>Все остальные <code>.md</code> файлы - страницы документации</li>
+<li>Управление жизненным циклом документа (создание → согласование → подписание → исполнение → архив).</li>
+<li>Разграничение доступа на основе ролей (AD групп).</li>
+<li>Логирование всех действий с документом (кто, когда, что изменил).</li>
+<li>Генерация дашбордов и уведомлений о статусах.</li>
+<li>Настройка маршрутов согласования администратором.</li>
 </ul>
-</li>
-</ul>
-<h3 id="Расположение-файлов"><a class="header" href="#Расположение-файлов">Расположение файлов</a></h3>
+<h3 id="Что-не-входит-в-границы-системы-требует-внешних-систем"><a class="header" href="#Что-не-входит-в-границы-системы-требует-внешних-систем">Что не входит в границы системы (требует внешних систем)</a></h3>
 <ul>
-<li>Все Markdown файлы должны находиться в директории <code>src/</code>. Рекомендуется ссылаться на md файлы из SUMMARY.md (см. пример в SUMMARY.md).</li>
-<li>Изображения и другие ресурсы рекомендуется хранить в релеватных папках <code>src/images</code>, <code>src/diagrams</code> и тд.</li>
+<li>Долговременное хранение документов (передаётся во внешний архив).</li>
+<li>Квалифицированная электронная подпись (интеграция с криптопровайдером/УЦ).</li>
+<li>Формирование бухгалтерских проводок и платежей (интеграция с ERP/банком).</li>
+<li>Нормативно-справочная информация о штатной структуре (получается из HRIS/AD).</li>
 </ul>
-<h3 id="Локальная-разработка"><a class="header" href="#Локальная-разработка">Локальная разработка</a></h3>
-<ol>
-<li>Установите MDBook <a href="https://rust-lang.github.io/mdBook/guide/installation.html">инструкция</a></li>
-<li>Запустите сервер разработки:</li>
-</ol>
-<pre><code class="language-bash">mdbook serve --open
-</code></pre>
-<ol start="3">
-<li>Откройте http://localhost:3000 в браузере.</li>
-</ol>
-<h3 id="Конфигурация-репозитория"><a class="header" href="#Конфигурация-репозитория">Конфигурация репозитория</a></h3>
-<ol>
-<li>Сделайте fork репозитория <a href="https://github.com/Jho00/system-engineering-playbook">mdb</a></li>
-<li>Перейдите в настройки своего github репозитория. Выберите вкладку Actions -&gt; General. Установите "Read and write permissions" в категории Workflow permissions</li>
-</ol>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="drawio-example"><a class="header" href="#drawio-example">Drawio Example</a></h1>
-<h3 id="Создание-диаграммы"><a class="header" href="#Создание-диаграммы">Создание диаграммы</a></h3>
-<ol>
-<li>Создайте диаграмму используя <a href="https://app.diagrams.net/">draw.io</a></li>
-<li>Сохраните файл в формате <code>.drawio</code> в проект</li>
-<li>Добавьте файл в индексацию git и отправьте в github репозиторий</li>
-</ol>
-<h3 id="Добавление-диаграммы-в-документацию"><a class="header" href="#Добавление-диаграммы-в-документацию">Добавление диаграммы в документацию</a></h3>
-<p>Для вставки диаграммы используйте синтаксис из примера ниже, заметете, что необходимо указать ссылку на файл в репозитории.</p>
-<iframe class="drawio-viewer" src="https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=diagram&url=https://raw.githubusercontent.com/bndroll/mdb/master/src/diagrams/qwe.drawio"></iframe><div style="break-before: page; page-break-before: always;"></div><h1 id="swagger-example"><a class="header" href="#swagger-example">Swagger Example</a></h1>
-<h3 id="Подготовка-swagger-спецификации"><a class="header" href="#Подготовка-swagger-спецификации">Подготовка Swagger-спецификации</a></h3>
-<ol>
-<li>Создайте файл спецификации API в формате YAML</li>
-<li>Сохраните файл как <code>swagger.yaml</code> в директорию <code>src/swagger/</code></li>
-<li>Убедитесь, что спецификация соответствует стандарту OpenAPI 3.0</li>
-</ol>
-<h3 id="Вставка-спецификации-в-документацию"><a class="header" href="#Вставка-спецификации-в-документацию">Вставка спецификации в документацию</a></h3>
-<p>Для вставки спецификации в документацию используйте синтаксис из примера ниже.</p>
-<iframe src="swagger/swagger.html" width="100%" height="1500px" style="border:0;" allowfullscreen="allowfullscreen"></iframe>
+<hr />
+<h2 id="12-Внешние-сущности-окружение"><a class="header" href="#12-Внешние-сущности-окружение">1.2. Внешние сущности (окружение)</a></h2>
+<h3 id="Пользователи"><a class="header" href="#Пользователи">Пользователи</a></h3>
+<div class="table-wrapper"><table><thead><tr><th><strong>Сущность</strong></th><th><em><strong>Роль в документообороте</strong></em></th></tr></thead><tbody>
+<tr><td>Инициатор</td><td>Сотрудник, создающий документ и отслеживающий его прохождение.</td></tr>
+<tr><td>Согласующий</td><td>Руководитель или менеджер, принимающий решение (подпись/отказ/делегирование).</td></tr>
+<tr><td>Юрист</td><td>Проверяет договоры на соответствие нормам, даёт юридическое заключение.</td></tr>
+<tr><td>Бухгалтер</td><td>Проверяет реквизиты, связывает документ с бюджетом, инициирует оплату.</td></tr>
+<tr><td>Администратор</td><td>Настраивает маршруты, права доступа, мониторит логи и производительность.</td></tr>
+</tbody></table>
+</div>
+<h3 id="Смежные-системы"><a class="header" href="#Смежные-системы">Смежные системы</a></h3>
+<div class="table-wrapper"><table><thead><tr><th><strong>Система</strong></th><th><strong>Назначение взаимодействия</strong></th></tr></thead><tbody>
+<tr><td>Система единого входа</td><td>Аутентификация, получение учётных записей, групп, ролей.</td></tr>
+<tr><td>Хранилище документов</td><td>Сохранение и получение файлов и их версий.</td></tr>
+<tr><td>Система уведомлений</td><td>Отправка оповещений о задачах, сроках, результатах.</td></tr>
+<tr><td>Справочник оргструктуры</td><td>Актуальная иерархия подчинённости, замещения, штатное расписание.</td></tr>
+<tr><td>Система криптоподписи</td><td>Формирование и проверка КЭП, штампа времени.</td></tr>
+<tr><td>Долговременный архив</td><td>Приём документов на постоянное хранение после закрытия дел.</td></tr>
+<tr><td>Бюджетирование</td><td>Получение остатков бюджетов, формирование заявок на оплату.</td></tr>
+</tbody></table>
+</div>
+<hr />
+<h2 id="13-Потоки-данных-входящие--исходящие"><a class="header" href="#13-Потоки-данных-входящие--исходящие">1.3. Потоки данных (входящие / исходящие)</a></h2>
+<iframe class="drawio-viewer" src="https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=diagram&url=https://raw.githubusercontent.com/TwilightWolvesCorporation/system-engineering-playbook/main/src/diagrams/DockiesDiagramsContext.drawio"></iframe>
+<h3 id="Инициатор"><a class="header" href="#Инициатор">Инициатор</a></h3>
+<div class="table-wrapper"><table><thead><tr><th><strong>Направление</strong></th><th><strong>Поток данных</strong></th></tr></thead><tbody>
+<tr><td>→ Dockies</td><td>Карточка документа с типом (заявка / договор / служебка), реквизитами и вложенными файлами</td></tr>
+<tr><td>→ Dockies</td><td>Запрос текущего статуса (по ID документа)</td></tr>
+<tr><td>← Dockies</td><td>Форма ввода с автозаполнением полей (контрагенты, суммы)</td></tr>
+<tr><td>← Dockies</td><td>Дашборд со списком документов и их статусами (с фильтрами)</td></tr>
+<tr><td>← Dockies</td><td>Уведомление о результате согласования (согласован / отклонён / отправлен на доработку)</td></tr>
+</tbody></table>
+</div>
+<h3 id="Согласующий"><a class="header" href="#Согласующий">Согласующий</a></h3>
+<div class="table-wrapper"><table><thead><tr><th><strong>Направление</strong></th><th><strong>Поток данных</strong></th></tr></thead><tbody>
+<tr><td>→ Dockies</td><td>Решение: согласовать / отклонить / делегировать другому</td></tr>
+<tr><td>→ Dockies</td><td>Резолюция (текстовый комментарий, до 4000 символов)</td></tr>
+<tr><td>→ Dockies</td><td>Запрос полного контекста документа (версии, история, комментарии юриста)</td></tr>
+<tr><td>← Dockies</td><td>Список входящих задач с приоритетом и сроком исполнения</td></tr>
+<tr><td>← Dockies</td><td>Уведомление о новой задаче (с кратким содержанием)</td></tr>
+</tbody></table>
+</div>
+<h3 id="Юрист"><a class="header" href="#Юрист">Юрист</a></h3>
+<div class="table-wrapper"><table><thead><tr><th><strong>Направление</strong></th><th><strong>Поток данных</strong></th></tr></thead><tbody>
+<tr><td>→ Dockies</td><td>Юридическое заключение: «соответствует / не соответствует / требуется доработка»</td></tr>
+<tr><td>→ Dockies</td><td>Постраничные комментарии прямо в документе (с привязкой к версии)</td></tr>
+<tr><td>← Dockies</td><td>Сравнение двух версий документа (подсветка различий)</td></tr>
+<tr><td>← Dockies</td><td>Актуальные шаблоны договоров (из библиотеки)</td></tr>
+</tbody></table>
+</div>
+<h3 id="Бухгалтер"><a class="header" href="#Бухгалтер">Бухгалтер</a></h3>
+<div class="table-wrapper"><table><thead><tr><th><strong>Направление</strong></th><th><strong>Поток данных</strong></th></tr></thead><tbody>
+<tr><td>→ Dockies</td><td>Статус проверки реквизитов: корректны / ошибка</td></tr>
+<tr><td>→ Dockies</td><td>Привязка документа к статье бюджета (код ЦФО)</td></tr>
+<tr><td>← Dockies</td><td>Сформированный счёт на оплату (на основе реквизитов)</td></tr>
+<tr><td>← Dockies</td><td>Связанные документы: договор → акт → счёт (граф связей)</td></tr>
+</tbody></table>
+</div>
+<h3 id="Администратор"><a class="header" href="#Администратор">Администратор</a></h3>
+<div class="table-wrapper"><table><thead><tr><th><strong>Направление</strong></th><th><strong>Поток данных</strong></th></tr></thead><tbody>
+<tr><td>→ Dockies</td><td>Конфигурация маршрута: последовательный / параллельный / с условиями</td></tr>
+<tr><td>→ Dockies</td><td>Назначение прав: роль → группа AD → тип документа</td></tr>
+<tr><td>← Dockies</td><td>Логи аудита: кто, когда, какое действие, с каким документом</td></tr>
+<tr><td>← Dockies</td><td>Метрики производительности: время согласования, загрузка узлов</td></tr>
+</tbody></table>
+</div>
+<h3 id="Система-единого-входа"><a class="header" href="#Система-единого-входа">Система единого входа</a></h3>
+<div class="table-wrapper"><table><thead><tr><th><strong>Направление</strong></th><th><strong>Поток данных</strong></th></tr></thead><tbody>
+<tr><td>→ Dockies</td><td>Учётная запись: логин, email, подразделение, manager (прямой руководитель)</td></tr>
+<tr><td>→ Dockies</td><td>Членство в группах безопасности (для ролей)</td></tr>
+<tr><td>← Dockies</td><td>Запрос аутентификации (токен / пароль)</td></tr>
+</tbody></table>
+</div>
+<h3 id="Хранилище-документов"><a class="header" href="#Хранилище-документов">Хранилище документов</a></h3>
+<div class="table-wrapper"><table><thead><tr><th><strong>Направление</strong></th><th><strong>Поток данных</strong></th></tr></thead><tbody>
+<tr><td>→ Dockies</td><td>Полученный файл по ID версии (вместе с метаданными: размер, хеш, дата)</td></tr>
+<tr><td>← Dockies</td><td>Команда сохранить новую версию (с указанием автора и комментария к версии)</td></tr>
+<tr><td>← Dockies</td><td>Запрос на получение предыдущей версии (для сравнения)</td></tr>
+</tbody></table>
+</div>
+<h3 id="Система-уведомлений"><a class="header" href="#Система-уведомлений">Система уведомлений</a></h3>
+<div class="table-wrapper"><table><thead><tr><th><strong>Направление</strong></th><th><strong>Поток данных</strong></th></tr></thead><tbody>
+<tr><td>← Dockies</td><td>Отправить уведомление: получатель (email / ID в мессенджере), тема, тело, ссылка на документ</td></tr>
+</tbody></table>
+</div>
+<h3 id="Справочник-организационная-структура"><a class="header" href="#Справочник-организационная-структура">Справочник организационная структура</a></h3>
+<div class="table-wrapper"><table><thead><tr><th><strong>Направление</strong></th><th><strong>Поток данных</strong></th></tr></thead><tbody>
+<tr><td>→ Dockies</td><td>Актуальная иерархия подразделений и сотрудников (включая временные замещения)</td></tr>
+<tr><td>→ Dockies</td><td>Штатное расписание (должности, лимиты согласования по суммам)</td></tr>
+</tbody></table>
+</div>
+<h3 id="Система-криптоподписи"><a class="header" href="#Система-криптоподписи">Система криптоподписи</a></h3>
+<div class="table-wrapper"><table><thead><tr><th><strong>Направление</strong></th><th><strong>Поток данных</strong></th></tr></thead><tbody>
+<tr><td>→ Dockies</td><td>Подписанный хеш документа + сертификат + штамп времени</td></tr>
+<tr><td>← Dockies</td><td>Хеш документа (SHA-256) для подписания</td></tr>
+</tbody></table>
+</div>
+<h3 id="Долговременный-архив"><a class="header" href="#Долговременный-архив">Долговременный архив</a></h3>
+<div class="table-wrapper"><table><thead><tr><th><strong>Направление</strong></th><th><strong>Поток данных</strong></th></tr></thead><tbody>
+<tr><td>← Dockies</td><td>Пакет документов + опись (по истечении срока хранения в Dockies)</td></tr>
+</tbody></table>
+</div>
+<h3 id="Бюджетирование"><a class="header" href="#Бюджетирование">Бюджетирование</a></h3>
+<div class="table-wrapper"><table><thead><tr><th><strong>Направление</strong></th><th><strong>Поток данных</strong></th></tr></thead><tbody>
+<tr><td>→ Dockies</td><td>Остаток бюджета по статье / коду ЦФО</td></tr>
+<tr><td>← Dockies</td><td>Заявка на оплату (после согласования)</td></tr>
+</tbody></table>
+</div>
+<hr />
+<h2 id="14-Ключевые-ограничения-и-допущения"><a class="header" href="#14-Ключевые-ограничения-и-допущения">1.4. Ключевые ограничения и допущения</a></h2>
+<h3 id="Ограничения"><a class="header" href="#Ограничения">Ограничения</a></h3>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center"><strong>ID</strong></th><th style="text-align: left"><strong>Ограничение</strong></th><th style="text-align: left"><strong>Обоснование</strong></th></tr></thead><tbody>
+<tr><td style="text-align: center">C01</td><td style="text-align: left">Dockies не может самостоятельно генерировать квалифицированную электронную подпись</td><td style="text-align: left">Юридическая значимость требует внешнего УЦ согласно 63-ФЗ</td></tr>
+<tr><td style="text-align: center">C02</td><td style="text-align: left">Документы хранятся в системе в актуальном состоянии не более 5 лет, затем выгружаются во внешний архив</td><td style="text-align: left">Политика компании и ёмкость оперативного хранилища</td></tr>
+<tr><td style="text-align: center">C03</td><td style="text-align: left">Все действия с документами должны логироваться с невозможностью удаления логов</td><td style="text-align: left">Требование неотказуемости и внутреннего аудита</td></tr>
+<tr><td style="text-align: center">C04</td><td style="text-align: left">Время отклика интерфейса для инициатора и согласующего не более 2 секунд (в 95% случаев)</td><td style="text-align: left">NFR на производительность</td></tr>
+<tr><td style="text-align: center">C05</td><td style="text-align: left">Одновременно в системе может быть активно не более 10 000 сессий</td><td style="text-align: left">Ограничение инфраструктуры (на начальном этапе)</td></tr>
+<tr><td style="text-align: center">C06</td><td style="text-align: left">Резервное копирование конфигурации маршрутов и прав — каждые 24 часа</td><td style="text-align: left">Требование администратора к восстановлению</td></tr>
+</tbody></table>
+</div>
+<h3 id="Допущения"><a class="header" href="#Допущения">Допущения</a></h3>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center"><strong>ID</strong></th><th style="text-align: left"><strong>Допущение</strong></th><th style="text-align: left"><strong>Ответственный</strong></th></tr></thead><tbody>
+<tr><td style="text-align: center">A01</td><td style="text-align: left">Система единого входа содержит актуальные записи о руководителях (атрибут <code>manager</code>)</td><td style="text-align: left">IT-отдел</td></tr>
+<tr><td style="text-align: center">A02</td><td style="text-align: left">Система криптоподписи доступна по API 24/7 с надёжностью 99.9%</td><td style="text-align: left">Владелец УЦ</td></tr>
+<tr><td style="text-align: center">A03</td><td style="text-align: left">Внешний шлюз уведомлений поддерживает отправку email и сообщений в корпоративный мессенджер (Telegram / Teams)</td><td style="text-align: left">Команда интеграции</td></tr>
+<tr><td style="text-align: center">A04</td><td style="text-align: left">HRIS предоставляет полный дамп оргструктуры ежедневно в 02:00 UTC</td><td style="text-align: left">Отдел кадров</td></tr>
+<tr><td style="text-align: center">A05</td><td style="text-align: left">Долговременный архив поддерживает приём пакетов в формате MTOM / SOAP</td><td style="text-align: left">Архивная служба</td></tr>
+<tr><td style="text-align: center">A06</td><td style="text-align: left">Все сотрудники имеют уникальные логины в AD, привязанные к email</td><td style="text-align: left">Политика идентификации</td></tr>
+<tr><td style="text-align: center">A07</td><td style="text-align: left">Юридическая значимость подтверждается наличием сертифицированного средства КЭП в контуре интеграции</td><td style="text-align: left">Юридический департамент</td></tr>
+</tbody></table>
+</div>
+<hr />
+<h2 id="15-Примечание-по-нотации"><a class="header" href="#15-Примечание-по-нотации">1.5. Примечание по нотации</a></h2>
+<p>Данная контекстная диаграмма выполнена в традиции DFD (Data Flow Diagram, методология Тома ДеМарко) с элементами уточнения потоков данных до конкретных событий/полей. Показаны только внешние сущности и границы системы «чёрного ящика». Внутренние процессы (маршрутизация, версионирование, логирование) не раскрываются — для них может быть построена диаграмма декомпозиции следующего уровня.</p>
+<p>Диаграмма не содержит указаний на протоколы передачи (REST, SOAP, LDAP, IMAP) и типы интерфейсов (GUI, CLI, API), так как это вторичные решения.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="conops"><a class="header" href="#conops">CONOPS</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Требования"><a class="header" href="#Требования">Требования</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Архитектура"><a class="header" href="#Архитектура">Архитектура</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Интерфейсы"><a class="header" href="#Интерфейсы">Интерфейсы</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Риски"><a class="header" href="#Риски">Риски</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="validation--verification"><a class="header" href="#validation--verification">Validation &amp; Verification</a></h1>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
