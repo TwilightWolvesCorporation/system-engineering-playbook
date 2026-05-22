@@ -1,0 +1,83 @@
+asyncapi: 2.6.0
+info:
+  title: Dockies Internal Events
+  version: 1.0.0
+  description: Асинхронные события для взаимодействия между сервисами (RabbitMQ)
+defaultContentType: application/json
+
+channels:
+  task.assigned:
+    publish:
+      summary: Назначена новая задача
+      operationId: onTaskAssigned
+      message:
+        $ref: '#/components/messages/TaskAssigned'
+  document.ready_for_edo:
+    publish:
+      summary: Документ готов к отправке контрагенту
+      operationId: onDocumentReadyForEdo
+      message:
+        $ref: '#/components/messages/DocumentReady'
+  notification.email:
+    publish:
+      summary: Отправить email уведомление
+      operationId: sendEmailNotification
+      message:
+        $ref: '#/components/messages/EmailNotification'
+  webhook.document_approved:
+    subscribe:
+      summary: Внешний вебхук при утверждении документа
+      operationId: onDocumentApproved
+      message:
+        $ref: '#/components/messages/WebhookPayload'
+
+components:
+  messages:
+    TaskAssigned:
+      payload:
+        type: object
+        properties:
+          event_id:
+            type: string
+            format: uuid
+          user_email:
+            type: string
+          task_id:
+            type: string
+          document_id:
+            type: string
+          deadline:
+            type: string
+            format: date-time
+    DocumentReady:
+      payload:
+        type: object
+        properties:
+          document_id:
+            type: string
+          document_url:
+            type: string
+          counterparty_email:
+            type: string
+    EmailNotification:
+      payload:
+        type: object
+        properties:
+          recipient_email:
+            type: string
+          subject:
+            type: string
+          body:
+            type: string
+          document_id:
+            type: string
+    WebhookPayload:
+      payload:
+        type: object
+        properties:
+          event_type:
+            type: string
+          document:
+            type: object
+          result:
+            type: object
