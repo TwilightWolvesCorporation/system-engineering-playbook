@@ -1,0 +1,154 @@
+<mxfile host="drawio-plugin" modified="2026-05-22T09:19:15.725Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" etag="M9qf0SyyUxNrsTlhD2uR" version="22.1.22" type="embed">
+  <diagram name="Сценарий 5: Выгрузка для регулятора" id="seq-scenario5">
+    <mxGraphModel dx="1889" dy="402" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;Сценарий 5: Выгрузка данных для проверки регулятором&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="360" width="480" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="admin" value="&lt;span style=&quot;font-size: 12px;&quot;&gt;Администратор&lt;/span&gt;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;rounded=0;arcSize=0;fillColor=none;strokeWidth=3;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="-160" y="80" width="120" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="webapp" value="&lt;span style=&quot;font-size: 12px;&quot;&gt;Веб&lt;br style=&quot;font-size: 12px;&quot;&gt;приложение&lt;/span&gt;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;rounded=0;arcSize=0;fillColor=none;strokeWidth=3;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="40" y="80" width="120" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="api" value="&lt;span style=&quot;font-size: 12px;&quot;&gt;API&lt;br style=&quot;font-size: 12px;&quot;&gt;Gateway&lt;/span&gt;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;rounded=0;arcSize=0;fillColor=none;strokeWidth=3;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="240" y="80" width="120" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="audit" value="&lt;span style=&quot;font-size: 12px;&quot;&gt;Журнал&lt;br style=&quot;font-size: 12px;&quot;&gt;аудита&lt;/span&gt;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;rounded=0;arcSize=0;fillColor=none;strokeWidth=3;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="440" y="80" width="120" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="db" value="&lt;span style=&quot;font-size: 12px;&quot;&gt;Реляционная&lt;br style=&quot;font-size: 12px;&quot;&gt;БД&lt;/span&gt;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;rounded=0;arcSize=0;fillColor=none;strokeWidth=3;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="640" y="80" width="120" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="repo" value="&lt;span style=&quot;font-size: 12px;&quot;&gt;Репозиторий&lt;br style=&quot;font-size: 12px;&quot;&gt;(S3)&lt;/span&gt;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;rounded=0;arcSize=0;fillColor=none;strokeWidth=3;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="840" y="80" width="120" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="mask" value="&lt;span style=&quot;font-size: 12px;&quot;&gt;Сервис&lt;br style=&quot;font-size: 12px;&quot;&gt;маскирования&lt;/span&gt;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;rounded=0;arcSize=0;fillColor=none;strokeWidth=3;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="1040" y="80" width="120" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="security" value="&lt;span style=&quot;font-size: 12px;&quot;&gt;Служба&lt;br style=&quot;font-size: 12px;&quot;&gt;безопасности&lt;/span&gt;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;rounded=0;arcSize=0;fillColor=none;strokeWidth=3;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="1240" y="80" width="120" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="m1" value="запрос выгрузки" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;fontSize=12;strokeWidth=3;fontStyle=1;endFill=1;" parent="1" source="admin" target="webapp" edge="1">
+          <mxGeometry x="0.0026" y="10" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint y="160" />
+              <mxPoint y="160" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" value="POST /export" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;fontSize=12;strokeWidth=3;fontStyle=1" parent="1" source="webapp" target="api" edge="1">
+          <mxGeometry x="0.0026" y="10" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="200" />
+              <mxPoint x="200" y="200" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3" value="запросить аудит" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;fontSize=12;strokeWidth=3;fontStyle=1" parent="1" source="api" target="audit" edge="1">
+          <mxGeometry x="0.0026" y="10" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="370" y="240" />
+              <mxPoint x="370" y="240" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4" value="SELECT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;fontSize=12;strokeWidth=3;fontStyle=1" parent="1" source="audit" target="db" edge="1">
+          <mxGeometry x="0.1039" y="10" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="280" />
+              <mxPoint x="600" y="280" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" value="запросить документы" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;fontSize=12;strokeWidth=3;fontStyle=1" parent="1" source="api" target="repo" edge="1">
+          <mxGeometry x="0.0009" y="10" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="320" />
+              <mxPoint x="600" y="320" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" value="файлы" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;dashed=1;fontSize=12;strokeWidth=3;fontStyle=1;dashPattern=1 1;" parent="1" source="repo" target="api" edge="1">
+          <mxGeometry x="-0.0009" y="-10" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="360" />
+              <mxPoint x="600" y="360" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" value="применить маскирование" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;fontSize=12;strokeWidth=3;fontStyle=1" parent="1" source="api" target="mask" edge="1">
+          <mxGeometry x="-0.2501" y="10" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="400" />
+              <mxPoint x="700" y="400" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m8" value="маскированные данные" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;dashed=1;fontSize=12;strokeWidth=3;fontStyle=1;dashPattern=1 1;" parent="1" source="mask" target="api" edge="1">
+          <mxGeometry x="-0.2013" y="-10" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="440" />
+              <mxPoint x="700" y="440" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m9" value="уведомление СБ" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;fontSize=12;strokeWidth=3;fontStyle=1" parent="1" source="api" target="security" edge="1">
+          <mxGeometry x="0.0005" y="10" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="480" />
+              <mxPoint x="800" y="480" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m10" value="СБ подтверждает" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;fontSize=12;strokeWidth=3;fontStyle=1;dashed=1;dashPattern=1 1;" parent="1" source="security" target="webapp" edge="1">
+          <mxGeometry x="-0.1173" y="-10" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="520" />
+              <mxPoint x="700" y="520" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m11" value="подписать КЭП" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;fontSize=12;strokeWidth=3;fontStyle=1" parent="1" source="api" target="mask" edge="1">
+          <mxGeometry x="0.2013" y="10" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="560" />
+              <mxPoint x="700" y="560" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m12" value="готовый архив" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;dashed=1;fontSize=12;strokeWidth=3;fontStyle=1;dashPattern=1 1;" parent="1" source="api" target="webapp" edge="1">
+          <mxGeometry x="-0.0032" y="-10" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="600" />
+              <mxPoint x="200" y="600" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m13" value="скачать / передать" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;dashed=1;fontSize=12;strokeWidth=3;fontStyle=1;dashPattern=1 1;" parent="1" source="webapp" target="admin" edge="1">
+          <mxGeometry x="-0.0029" y="-10" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint y="640" />
+              <mxPoint y="640" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
