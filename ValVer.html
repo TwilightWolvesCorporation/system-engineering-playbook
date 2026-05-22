@@ -177,6 +177,414 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="validation--verification"><a class="header" href="#validation--verification">Validation &amp; Verification</a></h1>
+<ul>
+<li><a href="#71-%D0%BE%D0%B1%D0%BE%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F">7.1. Обозначения</a></li>
+<li><a href="#72-%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D0%B0-%D1%82%D1%80%D0%B0%D1%81%D1%81%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D0%B8-traceability-matrix">7.2. Матрица трассируемости (Traceability Matrix)</a></li>
+<li><a href="#73-%D0%B4%D0%B5%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D1%82%D0%B5%D1%81%D1%82-%D0%BA%D0%B5%D0%B9%D1%81%D0%BE%D0%B2-test-cases">7.3. Детальное описание тест-кейсов (Test Cases)</a>
+<ul>
+<li><a href="#tc-01-e2e-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8-%D0%BC%D0%B0%D1%80%D1%88%D1%80%D1%83%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B0-happy-path">TC-01: E2E создание и маршрутизация договора (Happy Path)</a></li>
+<li><a href="#tc-02-%D0%BE%D1%82%D0%BA%D0%BB%D0%BE%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0-%D0%B8-%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82-%D0%BD%D0%B0-%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D1%83">TC-02: Отклонение документа и возврат на доработку</a></li>
+<li><a href="#tc-03-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D1%82%D1%8B-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0-%D0%B4%D0%BB%D1%8F-%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D1%83%D1%8E%D1%89%D0%B5%D0%B3%D0%BE">TC-03: Проверка полноты контекста для согласующего</a></li>
+<li><a href="#tc-04-%D0%BA%D0%BE%D0%BD%D1%84%D0%BB%D0%B8%D0%BA%D1%82-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B9-%D0%BF%D1%80%D0%B8-%D0%BF%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC-%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8">TC-04: Конфликт версий при параллельном редактировании</a></li>
+<li><a href="#tc-05-%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0-%D0%BD%D0%B0-%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%83-%D0%B2-%D1%80%D0%B0%D0%BC%D0%BA%D0%B0%D1%85-%D0%B1%D1%8E%D0%B4%D0%B6%D0%B5%D1%82%D0%B0-happy-path">TC-05: Заявка на оплату в рамках бюджета (Happy Path)</a></li>
+<li><a href="#tc-06-%D0%BF%D1%80%D0%B5%D0%B2%D1%8B%D1%88%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B1%D1%8E%D0%B4%D0%B6%D0%B5%D1%82%D0%BD%D0%BE%D0%B3%D0%BE-%D0%BB%D0%B8%D0%BC%D0%B8%D1%82%D0%B0-%D0%B8-%D1%8D%D1%81%D0%BA%D0%B0%D0%BB%D0%B0%D1%86%D0%B8%D1%8F">TC-06: Превышение бюджетного лимита и эскалация</a></li>
+<li><a href="#tc-07-%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0-%D1%83%D0%B2%D0%B5%D0%B4%D0%BE%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B9-%D0%BE-%D0%BD%D0%BE%D0%B2%D1%8B%D1%85-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%D1%85">TC-07: Доставка уведомлений о новых задачах</a></li>
+<li><a href="#tc-08-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-%D0%B4%D0%B5%D0%B3%D1%80%D0%B0%D0%B4%D0%B0%D1%86%D0%B8%D0%B8-%D0%BF%D1%80%D0%B8-%D0%BD%D0%B5%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%BD%D0%BE%D1%81%D1%82%D0%B8-ad-%D0%B8-hris">TC-08: Режим деградации при недоступности AD и HRIS</a></li>
+<li><a href="#tc-09-%D0%BF%D0%BE%D0%BB%D0%BD%D1%8B%D0%B9-%D0%B6%D0%B8%D0%B7%D0%BD%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D1%86%D0%B8%D0%BA%D0%BB-%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B0-%D1%81-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%BC-%D1%8E%D1%80%D0%B8%D0%B4%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F-%D0%B7%D0%BD%D0%B0%D1%87%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C">TC-09: Полный жизненный цикл договора с контрагентом (Юридическая значимость)</a></li>
+<li><a href="#tc-10-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C-%D0%BF%D0%BE%D1%80%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B9-%D1%81%D0%B5%D0%BA%D1%80%D0%B5%D1%82%D0%B0%D1%80%D0%B8%D0%B0%D1%82%D0%B0-%D0%B8-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C-%D1%81%D1%80%D0%BE%D0%BA%D0%BE%D0%B2">TC-10: Контроль поручений секретариата и контроль сроков</a></li>
+<li><a href="#tc-11-%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%BE%D0%BC-%D0%B8-%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">TC-11: Управление доступом и мобильное согласование</a></li>
+<li><a href="#tc-12-%D0%BA%D0%B0%D0%B4%D1%80%D0%BE%D0%B2%D0%B0%D1%8F-%D1%81%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F-%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%BA%D0%B0-%D0%B8-%D1%86%D0%B5%D0%BB%D0%BE%D1%81%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D0%B0%D1%83%D0%B4%D0%B8%D1%82%D0%B0">TC-12: Кадровая служебная записка и целостность аудита</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="71-Обозначения"><a class="header" href="#71-Обозначения">7.1. Обозначения</a></h2>
+<ul>
+<li><strong>Метод проверки:</strong>
+<ul>
+<li><strong>T</strong> — Тест (функциональный, интеграционный, нагрузочный).</li>
+<li><strong>A</strong> — Анализ (изучение отчётов, метрик, журналов).</li>
+<li><strong>I</strong> — Инспекция (проверка архитектуры, конфигурации, кода).</li>
+<li><strong>D</strong> — Демонстрация (сквозной демо-сценарий перед заинтересованными сторонами).</li>
+</ul>
+</li>
+<li><strong>Артефакт/кейс:</strong> Ссылка на конкретный тест-кейс из раздела 7.3, протокол инспекции, отчёт нагрузочного теста, SLA-отчёт.</li>
+</ul>
+<h2 id="72-Матрица-трассируемости-traceability-matrix"><a class="header" href="#72-Матрица-трассируемости-traceability-matrix">7.2. Матрица трассируемости (Traceability Matrix)</a></h2>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Идентификатор требования</th><th style="text-align: left">Содержание (кратко)</th><th style="text-align: left">Метод проверки</th><th style="text-align: left">Артефакт / Кейс</th></tr></thead><tbody>
+<tr><td style="text-align: left">SR-SH-1</td><td style="text-align: left">Инициатор: создание документа, запуск маршрута, получение статуса и уведомлений.</td><td style="text-align: left">1) D<br>2) T</td><td style="text-align: left">1) Демо-сценарий «E2E: создание → согласование»<br>2) TC-01, TC-02, TC-07</td></tr>
+<tr><td style="text-align: left">SR-SH-2</td><td style="text-align: left">Согласующий: получение задачи с полным контекстом документа.</td><td style="text-align: left">1) D<br>2) T</td><td style="text-align: left">1) Демо-сценарий «Принятие решения согласующим»<br>2) TC-01, TC-03</td></tr>
+<tr><td style="text-align: left">SR-SH-3</td><td style="text-align: left">Юрист: загрузка новой версии с сохранением предыдущих.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-04</td></tr>
+<tr><td style="text-align: left">SR-SH-4</td><td style="text-align: left">Бухгалтер: проверка бюджетных лимитов и реквизитов.</td><td style="text-align: left">1) D<br>2) T</td><td style="text-align: left">1) Демо-сценарий «Заявка на оплату»<br>2) TC-05, TC-06</td></tr>
+<tr><td style="text-align: left">SR-SH-5</td><td style="text-align: left">Администратор: настройка маршрутов, прав, просмотр аудита.</td><td style="text-align: left">1) T<br>2) I</td><td style="text-align: left">1) TC-11<br>2) Инспекция интерфейса управления ролями</td></tr>
+<tr><td style="text-align: left">SR-SH-6</td><td style="text-align: left">Контрагент: обмен документами через оператора ЭДО с встречной подписью.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-09</td></tr>
+<tr><td style="text-align: left">SR-SH-7</td><td style="text-align: left">Служба безопасности: непрерывность работы при недоступности внешних систем.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-06, TC-07, TC-08, TC-10</td></tr>
+<tr><td style="text-align: left">SR-SH-8</td><td style="text-align: left">Спонсор: получение отчётности по ключевым показателям.</td><td style="text-align: left">1) D</td><td style="text-align: left">Демо-сценарий «Формирование отчёта»</td></tr>
+<tr><td style="text-align: left">SR-SH-9</td><td style="text-align: left">Отдел кадров: автоматизация обработки служебных записок.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-12</td></tr>
+<tr><td style="text-align: left">SR-SH-10</td><td style="text-align: left">Секретариат: регистрация и контроль поручений.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-10</td></tr>
+<tr><td style="text-align: left">SR-SH-11</td><td style="text-align: left">Проектная команда: стабильность и документированность API.</td><td style="text-align: left">1) I</td><td style="text-align: left">Инспекция документации OpenAPI</td></tr>
+<tr><td style="text-align: left">SR-SH-12</td><td style="text-align: left">Регуляторы: выгрузка данных для проверки.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-09</td></tr>
+<tr><td style="text-align: left">SR-SH-13</td><td style="text-align: left">Служба безопасности: маскирование данных при экспорте.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-09</td></tr>
+<tr><td style="text-align: left">SR-SYS-1</td><td style="text-align: left">Аутентификация через AD с выдачей токена.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-01 (предусловие — вход в систему)</td></tr>
+<tr><td style="text-align: left">SR-SYS-2</td><td style="text-align: left">Деградация аутентификации при недоступности AD.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-08</td></tr>
+<tr><td style="text-align: left">SR-SYS-3</td><td style="text-align: left">Управление ролевым доступом.</td><td style="text-align: left">1) T<br>2) I</td><td style="text-align: left">1) TC-11<br>2) Инспекция конфигурации прав</td></tr>
+<tr><td style="text-align: left">SR-SYS-4</td><td style="text-align: left">Создание карточки документа (UUID, версия).</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-01</td></tr>
+<tr><td style="text-align: left">SR-SYS-5</td><td style="text-align: left">Определение маршрута по справочнику оргструктуры.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-01, TC-05</td></tr>
+<tr><td style="text-align: left">SR-SYS-6</td><td style="text-align: left">Отправка уведомления о новой задаче.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-07</td></tr>
+<tr><td style="text-align: left">SR-SYS-7</td><td style="text-align: left">Загрузка новой версии файла с сохранением хеша (SHA-256).</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-04</td></tr>
+<tr><td style="text-align: left">SR-SYS-8</td><td style="text-align: left">Просмотр разницы версий.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-04</td></tr>
+<tr><td style="text-align: left">SR-SYS-9</td><td style="text-align: left">Согласование и переход по маршруту.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-01, TC-05</td></tr>
+<tr><td style="text-align: left">SR-SYS-10</td><td style="text-align: left">Отклонение и возврат на доработку.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-02</td></tr>
+<tr><td style="text-align: left">SR-SYS-11</td><td style="text-align: left">Обнаружение конфликта версий.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-04</td></tr>
+<tr><td style="text-align: left">SR-SYS-12</td><td style="text-align: left">Наложение КЭП с проверкой сертификата.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-09</td></tr>
+<tr><td style="text-align: left">SR-SYS-13</td><td style="text-align: left">Проверка сертификата через OCSP перед подписанием.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-09</td></tr>
+<tr><td style="text-align: left">SR-SYS-14</td><td style="text-align: left">Деградация подписи при недоступности криптопровайдера.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-09</td></tr>
+<tr><td style="text-align: left">SR-SYS-15</td><td style="text-align: left">Отправка документа контрагенту через ЭДО.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-09</td></tr>
+<tr><td style="text-align: left">SR-SYS-16</td><td style="text-align: left">Приём встречной подписи и протокола разногласий.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-09</td></tr>
+<tr><td style="text-align: left">SR-SYS-17</td><td style="text-align: left">Согласование с мобильного устройства.</td><td style="text-align: left">1) D</td><td style="text-align: left">Демо-сценарий на мобильном устройстве</td></tr>
+<tr><td style="text-align: left">SR-SYS-18</td><td style="text-align: left">Оффлайн-режим мобильного приложения.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-11</td></tr>
+<tr><td style="text-align: left">SR-SYS-19</td><td style="text-align: left">Отложенная подпись при отсутствии сертификата на мобильном устройстве.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-11</td></tr>
+<tr><td style="text-align: left">SR-SYS-20</td><td style="text-align: left">Автоматическая проверка лимитов через ERP.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-05, TC-06</td></tr>
+<tr><td style="text-align: left">SR-SYS-21</td><td style="text-align: left">Эскалация при превышении лимита.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-06</td></tr>
+<tr><td style="text-align: left">SR-SYS-22</td><td style="text-align: left">Деградация при недоступности ERP (ручной режим).</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-06</td></tr>
+<tr><td style="text-align: left">SR-SYS-23</td><td style="text-align: left">Блокировка отправки заявки, если контрагент не найден.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-06</td></tr>
+<tr><td style="text-align: left">SR-SYS-24</td><td style="text-align: left">Создание карточки входящего документа.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-10</td></tr>
+<tr><td style="text-align: left">SR-SYS-25</td><td style="text-align: left">Назначение поручения и контроль срока.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-10</td></tr>
+<tr><td style="text-align: left">SR-SYS-26</td><td style="text-align: left">Проверка остатка дней отпуска.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-12</td></tr>
+<tr><td style="text-align: left">SR-SYS-27</td><td style="text-align: left">Обновление личного дела в HRIS.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-12</td></tr>
+<tr><td style="text-align: left">SR-SYS-28</td><td style="text-align: left">Формирование пакета выгрузки для регулятора.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-09</td></tr>
+<tr><td style="text-align: left">SR-SYS-29</td><td style="text-align: left">Криптографическая подпись пакета выгрузки.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-09</td></tr>
+<tr><td style="text-align: left">SR-SYS-30</td><td style="text-align: left">Неизменяемый журнал аудита с криптоцепочкой.</td><td style="text-align: left">1) I<br>2) T</td><td style="text-align: left">1) Инспекция архитектуры аудита<br>2) TC-12</td></tr>
+<tr><td style="text-align: left">SR-SYS-31</td><td style="text-align: left">Экспорт акта аудита.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-12</td></tr>
+<tr><td style="text-align: left">SR-SYS-32</td><td style="text-align: left">Передача завершённых дел в долговременный архив.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-09</td></tr>
+<tr><td style="text-align: left">SR-SYS-33</td><td style="text-align: left">Синхронизация справочника оргструктуры с HRIS.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-05</td></tr>
+<tr><td style="text-align: left">SR-SYS-34</td><td style="text-align: left">Деградация при недоступности HRIS (использование кэша).</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-08</td></tr>
+<tr><td style="text-align: left">SR-SYS-35</td><td style="text-align: left">Кэширование справочника контрагентов.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-06</td></tr>
+<tr><td style="text-align: left">SR-SYS-36</td><td style="text-align: left">Настройка правил маскирования данных.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-09</td></tr>
+<tr><td style="text-align: left">SR-SYS-37</td><td style="text-align: left">Виджет «Календарь поручений» для секретаря.</td><td style="text-align: left">1) D</td><td style="text-align: left">Демо-сценарий интерфейса секретаря</td></tr>
+<tr><td style="text-align: left">SR-SYS-38</td><td style="text-align: left">Автоматическое напоминание о поручении.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-10</td></tr>
+<tr><td style="text-align: left">SR-SYS-39</td><td style="text-align: left">Проверка пересечения отпусков.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-12</td></tr>
+<tr><td style="text-align: left">SR-SYS-40</td><td style="text-align: left">Фиксация идентификатора устройства при подписании.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-11</td></tr>
+<tr><td style="text-align: left">SR-SYS-41</td><td style="text-align: left">Экспорт по требованиям Трудовой инспекции.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-09</td></tr>
+<tr><td style="text-align: left">NFR-1</td><td style="text-align: left">Время отклика при создании документа ≤2 с (p95).</td><td style="text-align: left">1) T<br>2) A</td><td style="text-align: left">1) Отчёт нагрузочного теста (p95)<br>2) Анализ конфигурации стенда</td></tr>
+<tr><td style="text-align: left">NFR-2</td><td style="text-align: left">Время отклика при наложении КЭП ≤5 с (p95).</td><td style="text-align: left">1) T</td><td style="text-align: left">Отчёт нагрузочного теста</td></tr>
+<tr><td style="text-align: left">NFR-3</td><td style="text-align: left">Доступность основных операций ≥99.5%.</td><td style="text-align: left">1) A</td><td style="text-align: left">SLA-отчёт по метрикам доступности</td></tr>
+<tr><td style="text-align: left">NFR-4</td><td style="text-align: left">Время переключения в деградированный режим ≤30 сек.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-08, TC-10</td></tr>
+<tr><td style="text-align: left">NFR-5</td><td style="text-align: left">Обнаружение модификации журнала аудита ≤1 минуты.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-12</td></tr>
+<tr><td style="text-align: left">NFR-6</td><td style="text-align: left">Шифрование данных (TLS 1.2+, AES-256).</td><td style="text-align: left">1) I</td><td style="text-align: left">Инспекция конфигурации и кода</td></tr>
+<tr><td style="text-align: left">NFR-7</td><td style="text-align: left">Масштабируемость: до 500 пользователей, 1 млн карточек.</td><td style="text-align: left">1) T</td><td style="text-align: left">Отчёт нагрузочного теста</td></tr>
+<tr><td style="text-align: left">NFR-8</td><td style="text-align: left">Восстановление после аварии: RPO ≤15 мин, RTO ≤1 ч.</td><td style="text-align: left">1) T</td><td style="text-align: left">Отчёт теста аварийного восстановления</td></tr>
+<tr><td style="text-align: left">NFR-9</td><td style="text-align: left">Удобство обучения нового пользователя ≤30 минут.</td><td style="text-align: left">1) T</td><td style="text-align: left">Отчёт usability-тестирования</td></tr>
+<tr><td style="text-align: left">NFR-10</td><td style="text-align: left">Совместимость с браузерами и мобильными ОС.</td><td style="text-align: left">1) T</td><td style="text-align: left">Отчёт кросс-браузерного тестирования</td></tr>
+<tr><td style="text-align: left">NFR-11</td><td style="text-align: left">Передача в архив в течение 24 часов.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-09</td></tr>
+<tr><td style="text-align: left">NFR-12</td><td style="text-align: left">Задержка доставки уведомлений (email ≤60 с, push ≤10 с).</td><td style="text-align: left">1) T</td><td style="text-align: left">Отчёт нагрузочного теста</td></tr>
+<tr><td style="text-align: left">NFR-13</td><td style="text-align: left">Время маскирования данных (увеличение ≤10%).</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-09</td></tr>
+<tr><td style="text-align: left">NFR-14</td><td style="text-align: left">Точность проверки пересечения отпусков ≥99%.</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-12</td></tr>
+<tr><td style="text-align: left">NFR-15</td><td style="text-align: left">Стабильность идентификации устройства (≥95%).</td><td style="text-align: left">1) T</td><td style="text-align: left">TC-11</td></tr>
+</tbody></table>
+</div>
+<h2 id="73-Детальное-описание-тест-кейсов-test-cases"><a class="header" href="#73-Детальное-описание-тест-кейсов-test-cases">7.3. Детальное описание тест-кейсов (Test Cases)</a></h2>
+<p>Все тест-кейсы нумеруются префиксом <code>TC-</code> и соотносятся с указанными в матрице трассируемости требованиями.</p>
+<h3 id="tc-01-e2e-создание-и-маршрутизация-договора-happy-path"><a class="header" href="#tc-01-e2e-создание-и-маршрутизация-договора-happy-path">TC-01: E2E создание и маршрутизация договора (Happy Path)</a></h3>
+<ul>
+<li><strong>ID:</strong> TC-01</li>
+<li><strong>Сценарий:</strong> 1 (Создание и согласование договора)</li>
+<li><strong>Цель:</strong> Подтвердить, что инициатор может создать карточку договора, а система корректно определяет маршрут согласования и создаёт задачу первому участнику.</li>
+<li><strong>Предусловия:</strong>
+<ul>
+<li>Пользователь "Инициатор" авторизован в Dockies.</li>
+<li>Справочник оргструктуры актуален, для типа документа "Договор" настроен маршрут: "Юрист" -&gt; "Согласующий".</li>
+<li>Шаблон договора доступен для загрузки.</li>
+</ul>
+</li>
+<li><strong>Тестовые данные:</strong>
+<ul>
+<li>Тип документа: <code>contract</code></li>
+<li>Имя контрагента: "ООО ТестКонтрагент"</li>
+<li>Сумма договора: 1 000 000 руб.</li>
+<li>Файл: <code>draft_contract.pdf</code></li>
+</ul>
+</li>
+<li><strong>Шаги:</strong>
+<ol>
+<li>Инициатор нажимает «Создать документ».</li>
+<li>Заполняет все обязательные поля карточки (тип, контрагент, сумма, предмет).</li>
+<li>Загружает файл <code>draft_contract.pdf</code> (Версия 1).</li>
+<li>Нажимает кнопку «Отправить на согласование».</li>
+<li>Проверяет, что в интерфейсе отображается новый статус документа.</li>
+</ol>
+</li>
+<li><strong>Ожидаемый результат:</strong>
+<ul>
+<li>После шага 4, система возвращает <code>201 Created</code> и присваивает документу уникальный <code>UUID</code>.</li>
+<li>Сервис маршрутизации создаёт задачу на роль "Юрист".</li>
+<li>Юрист получает уведомление о новой задаче.</li>
+<li>В карточке документа отображается статус: <code>in_progress</code> и текущий этап: <code>legal_review</code>.</li>
+</ul>
+</li>
+<li><strong>Постусловия:</strong> Созданная карточка и её версия сохранены в БД.</li>
+</ul>
+<h3 id="tc-02-Отклонение-документа-и-возврат-на-доработку"><a class="header" href="#tc-02-Отклонение-документа-и-возврат-на-доработку">TC-02: Отклонение документа и возврат на доработку</a></h3>
+<ul>
+<li><strong>ID:</strong> TC-02</li>
+<li><strong>Сценарий:</strong> 1 (Создание и согласование договора)</li>
+<li><strong>Цель:</strong> Проверить, что участник маршрута может отклонить документ, после чего он возвращается инициатору на доработку.</li>
+<li><strong>Предусловия:</strong> Документ находится на этапе согласования у пользователя "Согласующий".</li>
+<li><strong>Шаги:</strong>
+<ol>
+<li>Пользователь "Согласующий" открывает свою задачу на согласование.</li>
+<li>Нажимает кнопку «Отклонить».</li>
+<li>Вводит комментарий с причиной отклонения: «Неверно указана сумма договора».</li>
+<li>Подтверждает действие.</li>
+</ol>
+</li>
+<li><strong>Ожидаемый результат:</strong>
+<ul>
+<li>Статус документа меняется на <code>rejected</code>.</li>
+<li>Задача на согласование у "Согласующего" закрывается.</li>
+<li>Создаётся новая задача для пользователя "Инициатор" со статусом <code>Доработка</code>.</li>
+<li>"Инициатор" получает уведомление об отклонении с указанной причиной.</li>
+</ul>
+</li>
+<li><strong>Постусловия:</strong> В журнале аудита зафиксировано событие отклонения с комментарием.</li>
+</ul>
+<h3 id="tc-03-Проверка-полноты-контекста-для-согласующего"><a class="header" href="#tc-03-Проверка-полноты-контекста-для-согласующего">TC-03: Проверка полноты контекста для согласующего</a></h3>
+<ul>
+<li><strong>ID:</strong> TC-03</li>
+<li><strong>Сценарий:</strong> 1 (Создание и согласование договора)</li>
+<li><strong>Цель:</strong> Убедиться, что согласующий видит полную информацию по документу для принятия решения.</li>
+<li><strong>Предусловия:</strong> На этапе согласования у пользователя "Согласующий" есть задача по договору. Юрист уже загрузил правки (Версия 1.1).</li>
+<li><strong>Шаги:</strong>
+<ol>
+<li>Пользователь "Согласующий" открывает задачу.</li>
+<li>Просматривает информацию в карточке документа (контрагент, сумма, история).</li>
+<li>Открывает вкладку «Версии».</li>
+<li>Скачивает и сравнивает Версию 1 (инициатора) и Версию 1.1 (юриста).</li>
+</ol>
+</li>
+<li><strong>Ожидаемый результат:</strong>
+<ul>
+<li>В карточке отображаются все атрибуты документа.</li>
+<li>В истории отображаются все действия (создание, правка юриста).</li>
+<li>Пользователь может просмотреть разницу между двумя версиями файлов.</li>
+</ul>
+</li>
+</ul>
+<h3 id="tc-04-Конфликт-версий-при-параллельном-редактировании"><a class="header" href="#tc-04-Конфликт-версий-при-параллельном-редактировании">TC-04: Конфликт версий при параллельном редактировании</a></h3>
+<ul>
+<li><strong>ID:</strong> TC-04</li>
+<li><strong>Сценарий:</strong> 1 (Создание и согласование договора)</li>
+<li><strong>Цель:</strong> Подтвердить, что система блокирует операцию сохранения при попытке загрузить новую версию поверх уже загруженной другим участником.</li>
+<li><strong>Предусловия:</strong> Участник А (Юрист) открыл задачу. Участник Б (Согласующий) также открыл эту же задачу (например, с другого устройства).</li>
+<li><strong>Шаги:</strong>
+<ol>
+<li>Участник А загружает новую версию файла (Версия 2).</li>
+<li>После этого Участник Б пытается загрузить свою версию файла.</li>
+</ol>
+</li>
+<li><strong>Ожидаемый результат:</strong>
+<ul>
+<li>Система блокирует загрузку участником Б.</li>
+<li>Участник Б получает уведомление о конфликте версий: «Документ был изменён другим пользователем. Ваша версия устарела».</li>
+<li>Участнику Б предлагается скачать актуальную версию (Версия 2) для ознакомления.</li>
+</ul>
+</li>
+</ul>
+<h3 id="tc-05-Заявка-на-оплату-в-рамках-бюджета-happy-path"><a class="header" href="#tc-05-Заявка-на-оплату-в-рамках-бюджета-happy-path">TC-05: Заявка на оплату в рамках бюджета (Happy Path)</a></h3>
+<ul>
+<li><strong>ID:</strong> TC-05</li>
+<li><strong>Сценарий:</strong> 2 (Служебная записка на оплату)</li>
+<li><strong>Цель:</strong> Проверить успешный сценарий создания заявки на оплату, когда бюджетных лимитов достаточно.</li>
+<li><strong>Предусловия:</strong>
+<ul>
+<li>Пользователь "Инициатор" авторизован.</li>
+<li>Интеграция с ERP активна. По коду ЦФО <code>1001</code> доступен остаток бюджета 500 000 руб.</li>
+</ul>
+</li>
+<li><strong>Тестовые данные:</strong> Сумма заявки 100 000 руб., код ЦФО <code>1001</code>.</li>
+<li><strong>Шаги:</strong>
+<ol>
+<li>Инициатор создаёт служебную записку на оплату.</li>
+<li>Заполняет поля: сумма = 100 000, ЦФО = <code>1001</code>, прикрепляет счёт.</li>
+<li>Отправляет заявку.</li>
+</ol>
+</li>
+<li><strong>Ожидаемый результат:</strong>
+<ul>
+<li>Сервис проверки лимитов получает от ERP остаток бюджета.</li>
+<li>Задача создаётся для пользователя "Бухгалтер".</li>
+<li>В карточке заявки отображается статус <code>in_progress</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="tc-06-Превышение-бюджетного-лимита-и-эскалация"><a class="header" href="#tc-06-Превышение-бюджетного-лимита-и-эскалация">TC-06: Превышение бюджетного лимита и эскалация</a></h3>
+<ul>
+<li><strong>ID:</strong> TC-06</li>
+<li><strong>Сценарий:</strong> 2 (Служебная записка на оплату)</li>
+<li><strong>Цель:</strong> Проверить, что при превышении лимита инициируется процесс эскалации и ручной ввод лимита при недоступности ERP.</li>
+<li><strong>Предусловия:</strong>
+<ul>
+<li>Интеграция с ERP активна. По коду ЦФО <code>2002</code> остаток бюджета 200 000 руб.</li>
+<li><strong>Часть 1 (Эскалация):</strong> Сумма заявки = 300 000 руб.
+<ul>
+<li><strong>Ожидаемый результат:</strong> Задача блокируется для "Бухгалтера", переходит на эскалацию "Финансовому директору" со статусом <code>awaiting_budget</code>.</li>
+</ul>
+</li>
+<li><strong>Часть 2 (Ручной ввод):</strong> ERP недоступна.
+<ul>
+<li><strong>Шаги:</strong> Инициатор создаёт заявку. Бухгалтер в своей задаче видит пометку «Проверить лимиты вручную», ставит галочку «Лимит подтверждён вручную».</li>
+<li><strong>Ожидаемый результат:</strong> Задача принимается. В журнале аудита фиксируется пометка о ручном вводе.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Ожидаемый результат для Части 1:</strong> Задача на эскалации создаётся, Бухгалтер не может её согласовать.</li>
+</ul>
+<h3 id="tc-07-Доставка-уведомлений-о-новых-задачах"><a class="header" href="#tc-07-Доставка-уведомлений-о-новых-задачах">TC-07: Доставка уведомлений о новых задачах</a></h3>
+<ul>
+<li><strong>ID:</strong> TC-07</li>
+<li><strong>Сценарий:</strong> 1,2,3,4,5</li>
+<li><strong>Цель:</strong> Убедиться, что система отправляет уведомления пользователям при назначении новых задач.</li>
+<li><strong>Предусловия:</strong> Создана задача для пользователя "Юрист".</li>
+<li><strong>Шаги:</strong>
+<ol>
+<li>Выполнить сценарий TC-01, создав задачу для "Юриста".</li>
+<li>Проверить email и push-уведомления пользователя "Юрист".</li>
+</ol>
+</li>
+<li><strong>Ожидаемый результат:</strong> "Юрист" получил email и push-уведомление. В уведомлении указаны ID документа, его тип, имя инициатора и ссылка для перехода к задаче.</li>
+</ul>
+<h3 id="tc-08-Режим-деградации-при-недоступности-ad-и-hris"><a class="header" href="#tc-08-Режим-деградации-при-недоступности-ad-и-hris">TC-08: Режим деградации при недоступности AD и HRIS</a></h3>
+<ul>
+<li><strong>ID:</strong> TC-08</li>
+<li><strong>Сценарий:</strong> 1,5</li>
+<li><strong>Цель:</strong> Проверить, что система сохраняет работоспособность в режиме деградации, используя кэш, при падении внешних систем.</li>
+<li><strong>Предусловия:</strong> Система работает штатно, кэш оргструктуры и токены сессий сформированы.</li>
+<li><strong>Шаги:</strong>
+<ol>
+<li>Имитировать недоступность AD/SSO и HRIS.</li>
+<li>Пользователь с активной сессией (токен ещё действителен) пробует создать документ.</li>
+<li>Секретарь пробует создать поручение.</li>
+</ol>
+</li>
+<li><strong>Ожидаемый результат:</strong>
+<ul>
+<li>Пользователь с активной сессией может создавать документы.</li>
+<li>Секретарь может создать поручение, выбрав исполнителя из кэшированного списка.</li>
+<li>В журнале аудита для этих операций появляется запись «Использован кэш, внешняя система недоступна».</li>
+<li>Время отклика системы не превышает нормативы.</li>
+</ul>
+</li>
+</ul>
+<h3 id="tc-09-Полный-жизненный-цикл-договора-с-контрагентом-Юридическая-значимость"><a class="header" href="#tc-09-Полный-жизненный-цикл-договора-с-контрагентом-Юридическая-значимость">TC-09: Полный жизненный цикл договора с контрагентом (Юридическая значимость)</a></h3>
+<ul>
+<li><strong>ID:</strong> TC-09</li>
+<li><strong>Сценарий:</strong> 1 (Создание и согласование договора), 5 (Выгрузка)</li>
+<li><strong>Цель:</strong> Комплексная проверка юридической значимости: от подписания КЭП до отправки контрагенту и выгрузки для регулятора.</li>
+<li><strong>Предусловия:</strong> Договор согласован всеми внутренними участниками.</li>
+<li><strong>Шаги:</strong>
+<ol>
+<li>Последний согласующий нажимает «Подписать КЭП».
+<ul>
+<li><strong>Ожидаемый результат:</strong> Модуль подписи проверяет сертификат через OCSP, подписывает документ. Статус документа <code>signed</code>.</li>
+</ul>
+</li>
+<li>Проверить сценарий деградации криптопровайдера.
+<ul>
+<li><strong>Шаги:</strong> Отключить криптопровайдер. Попытаться подписать.</li>
+<li><strong>Ожидаемый результат:</strong> Статус <code>awaiting_signature</code>.</li>
+</ul>
+</li>
+<li>Модуль ЭДО отправляет документ контрагенту.
+<ul>
+<li><strong>Ожидаемый результат:</strong> Отправлен XML-пакет, получена квитанция.</li>
+</ul>
+</li>
+<li>Контрагент подписывает документ встречной КЭП.
+<ul>
+<li><strong>Ожидаемый результат:</strong> Статус документа <code>active</code>.</li>
+</ul>
+</li>
+<li>Администратор инициирует выгрузку пакета документов для регулятора.
+<ul>
+<li><strong>Ожидаемый результат:</strong> Сформирован архив в XML, содержащий все версии, подписи и аудит. Применено маскирование данных. Пакет подписан КЭП организации.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="tc-10-Контроль-поручений-секретариата-и-контроль-сроков"><a class="header" href="#tc-10-Контроль-поручений-секретариата-и-контроль-сроков">TC-10: Контроль поручений секретариата и контроль сроков</a></h3>
+<ul>
+<li><strong>ID:</strong> TC-10</li>
+<li><strong>Сценарий:</strong> 3 (Входящая корреспонденция)</li>
+<li><strong>Цель:</strong> Проверить процесс создания поручения, контроль сроков и эскалацию.</li>
+<li><strong>Шаги:</strong>
+<ol>
+<li>Секретарь регистрирует входящее письмо, создавая карточку документа.</li>
+<li>Назначает ответственного (Сотрудник А) и устанавливает срок исполнения — текущая дата +1 день.</li>
+<li>На следующий день проверить статус поручения.</li>
+<li>Имитировать недоступность Сервиса уведомлений и создать поручение.</li>
+</ol>
+</li>
+<li><strong>Ожидаемый результат:</strong>
+<ul>
+<li>У ответственного (Сотрудник А) появилась задача в списке.</li>
+<li>На следующий день система отправляет напоминание ответственному и секретарю.</li>
+<li>Если поручение не выполнено, задача эскалируется руководителю.</li>
+<li>При недоступности Сервиса уведомлений, поручение создаётся, но в аудите есть пометка об этом.</li>
+</ul>
+</li>
+</ul>
+<h3 id="tc-11-Управление-доступом-и-мобильное-согласование"><a class="header" href="#tc-11-Управление-доступом-и-мобильное-согласование">TC-11: Управление доступом и мобильное согласование</a></h3>
+<ul>
+<li><strong>ID:</strong> TC-11</li>
+<li><strong>Сценарий:</strong> 2 (Операции администратора)</li>
+<li><strong>Цель:</strong> Проверить разграничение прав доступа и функционал мобильного приложения.</li>
+<li><strong>Шаги:</strong>
+<ol>
+<li>Администратор создаёт новую роль «Внешний аудитор» с правом только на чтение.</li>
+<li>Проверяет права доступа для новой роли.</li>
+<li>Сотрудник заходит в мобильное приложение и пробует согласовать документ.</li>
+<li>Имитировать отсутствие сети на мобильном устройстве и принять решение.</li>
+</ol>
+</li>
+<li><strong>Ожидаемый результат:</strong>
+<ul>
+<li>Пользователь с ролью «Внешний аудитор» видит документы, но не может их редактировать или подписывать.</li>
+<li>В мобильном приложении отображается документ, можно выбрать решение и подтвердить.</li>
+<li>Решение, принятое в оффлайн-режиме, синхронизируется с сервером при восстановлении связи. В аудите есть пометка «Подписано в оффлайн-режиме».</li>
+</ul>
+</li>
+</ul>
+<h3 id="tc-12-Кадровая-служебная-записка-и-целостность-аудита"><a class="header" href="#tc-12-Кадровая-служебная-записка-и-целостность-аудита">TC-12: Кадровая служебная записка и целостность аудита</a></h3>
+<ul>
+<li><strong>ID:</strong> TC-12</li>
+<li><strong>Сценарий:</strong> 4 (Кадровая служебная записка)</li>
+<li><strong>Цель:</strong> Проверить автоматизацию кадровых процессов и целостность журнала аудита.</li>
+<li><strong>Шаги:</strong>
+<ol>
+<li>Инициатор создаёт служебную записку на отпуск на 10 дней.
+<ul>
+<li><strong>Ожидаемый результат:</strong> Система запрашивает остаток дней из HRIS и проверяет пересечение с графиком отпусков отдела.</li>
+</ul>
+</li>
+<li>Сотрудник из того же отдела подаёт заявление на отпуск, который пересекается &gt;50% по времени.
+<ul>
+<li><strong>Ожидаемый результат:</strong> Заявка блокируется, инициатор получает сообщение о конфликте.</li>
+</ul>
+</li>
+<li>Администратор экспортирует акт аудита по завершённому кадровому делу.</li>
+<li>Попытаться напрямую модифицировать запись в базе данных журнала аудита.</li>
+</ol>
+</li>
+<li><strong>Ожидаемый результат:</strong>
+<ul>
+<li>После утверждения отпуска, система обновляет личное дело сотрудника в HRIS.</li>
+<li>Экспортированный акт аудита (PDF/A) содержит полную ленту событий, подписи и контрольные суммы.</li>
+<li>Системa обнаруживает модификацию записи аудита и генерирует оповещение о нарушении целостности.</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 
